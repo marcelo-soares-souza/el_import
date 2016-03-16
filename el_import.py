@@ -7,8 +7,8 @@ try:
                              user='estudiolivre' \
                              host='192.168.122.2' \
                              password='estudiolivre'")
-except:
-    print("I am unable to connect to the database")
+except psycopg2.DatabaseError as e:
+    print("I am unable to connect to the database: ", e)
 else:
     print("Conectado")
 
